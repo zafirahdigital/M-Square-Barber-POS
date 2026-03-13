@@ -52,12 +52,13 @@
         .login-container {
             background: white;
             border-radius: 30px;
-            padding: 3rem;
+            padding: 2.5rem;
             max-width: 450px;
             width: 90%;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             text-align: center;
             animation: slideUp 0.5s ease;
+            position: relative;
         }
 
         @keyframes slideUp {
@@ -72,9 +73,28 @@
         }
 
         .login-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 4px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .login-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .login-logo i {
             font-size: 4rem;
-            color: #fbbf24;
-            margin-bottom: 1rem;
+            color: white;
         }
 
         .login-title {
@@ -128,17 +148,6 @@
             box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
         }
 
-        .login-btn-google {
-            background: white;
-            color: #1e293b;
-            border: 2px solid #e2e8f0;
-        }
-
-        .login-btn-google:hover {
-            background: #f8fafc;
-            border-color: #667eea;
-        }
-
         .login-error {
             color: #ef4444;
             font-size: 0.9rem;
@@ -146,20 +155,79 @@
             display: none;
         }
 
-        .login-footer {
-            margin-top: 1.5rem;
-            color: #64748b;
-            font-size: 0.9rem;
+        /* Social Media Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
         }
 
-        .login-footer a {
-            color: #667eea;
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .social-facebook {
+            background: #1877f2;
+        }
+
+        .social-instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .social-tiktok {
+            background: #000000;
+        }
+
+        .social-tiktok i {
+            filter: drop-shadow(2px 2px 0 #25f4ee) drop-shadow(-2px -2px 0 #fe2c55);
+        }
+
+        /* Contact Support Button */
+        .support-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #25D366;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
+            margin: 1rem 0;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
 
-        .login-footer a:hover {
-            text-decoration: underline;
+        .support-btn:hover {
+            background: #128C7E;
+            transform: scale(1.05);
+        }
+
+        /* Copyright */
+        .copyright {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
         }
 
         /* Main App - Hidden initially */
@@ -173,7 +241,7 @@
         .header {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
-            padding: 1rem 2rem;
+            padding: 0.8rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -192,15 +260,36 @@
             cursor: pointer;
         }
 
-        .logo i {
-            color: #fbbf24;
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .logo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-img i {
             font-size: 2rem;
+            color: white;
+        }
+
+        .logo span {
+            font-size: 1.2rem;
         }
 
         .header-right {
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .datetime {
@@ -242,6 +331,24 @@
 
         .logout-btn:hover {
             background: #dc2626;
+        }
+
+        .header-support {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #25D366;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+
+        .header-support:hover {
+            background: #128C7E;
+            transform: scale(1.05);
         }
 
         /* Navigation Tabs */
@@ -629,15 +736,6 @@
             background: #059669;
         }
 
-        .btn-loyalty {
-            background: #8b5cf6;
-            color: white;
-        }
-
-        .btn-loyalty:hover {
-            background: #7c3aed;
-        }
-
         /* Recent Invoices Table */
         .recent-invoices {
             background: white;
@@ -681,26 +779,6 @@
             border-radius: 40px;
             font-size: 0.75rem;
             font-weight: 600;
-        }
-
-        .status-pending {
-            background: #fff3cd;
-            color: #856404;
-        }
-
-        .status-confirmed {
-            background: #d1e7dd;
-            color: #0f5132;
-        }
-
-        .status-completed {
-            background: #cfe2ff;
-            color: #084298;
-        }
-
-        .status-cancelled {
-            background: #f8d7da;
-            color: #842029;
         }
 
         .action-icon {
@@ -771,7 +849,6 @@
             border-left: 4px solid #25D366;
         }
 
-        /* Customer Selection Dropdown */
         .customer-selector {
             margin: 1rem 0;
         }
@@ -817,12 +894,6 @@
             border-radius: 16px;
             padding: 1rem;
             margin: 1rem 0;
-        }
-
-        .appointment-services h4 {
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-            opacity: 0.9;
         }
 
         .appointment-service-grid {
@@ -885,50 +956,6 @@
 
         .appointment-card.cancelled {
             border-left-color: #ef4444;
-        }
-
-        .appointment-info h4 {
-            margin-bottom: 0.3rem;
-        }
-
-        .appointment-info p {
-            color: #64748b;
-            font-size: 0.9rem;
-            margin-bottom: 0.2rem;
-        }
-
-        .appointment-actions {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .appointment-actions button {
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            transition: 0.2s;
-        }
-
-        .btn-confirm {
-            background: #10b981;
-            color: white;
-        }
-
-        .btn-complete {
-            background: #3b82f6;
-            color: white;
-        }
-
-        .btn-cancel {
-            background: #ef4444;
-            color: white;
-        }
-
-        .btn-reminder {
-            background: #25D366;
-            color: white;
         }
 
         /* Admin Panel */
@@ -1049,6 +1076,12 @@
             .main-grid {
                 grid-template-columns: 1fr;
             }
+            .header-right {
+                gap: 0.8rem;
+            }
+            .datetime {
+                display: none;
+            }
         }
 
         /* Loyalty Points Display */
@@ -1092,7 +1125,10 @@
     <div id="loginScreen">
         <div class="login-container">
             <div class="login-logo">
-                <i class="fas fa-cut"></i>
+                <!-- Replace src with your actual logo image -->
+                <img src="https://zafirahdigital.github.io/M-Square-Barber-POS/Logo%20(3).png">
+                <!-- Fallback icon if image fails to load -->
+                <i class="fas fa-cut" style="display: none;"></i>
             </div>
             <h1 class="login-title">M-Square Barber</h1>
             <p class="login-subtitle">Professional POS System</p>
@@ -1105,14 +1141,28 @@
             <button class="login-btn" onclick="loginWithEmail()">
                 <i class="fas fa-sign-in-alt"></i> Sign In
             </button>
-            
-            <button class="login-btn login-btn-google" onclick="loginWithGoogle()">
-                <i class="fab fa-google"></i> Sign In with Google
-            </button>
-            
-            <div class="login-footer">
-                <a href="#" onclick="showForgotPassword()">Forgot Password?</a> | 
-                <a href="#" onclick="showSignUp()">Create Account</a>
+
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <a href="https://facebook.com/msquarebarber" target="_blank" class="social-link social-facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com/msquarebarber" target="_blank" class="social-link social-instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://tiktok.com/@msquarebarber" target="_blank" class="social-link social-tiktok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+
+            <!-- Contact Support WhatsApp Button -->
+            <a href="https://wa.me/923216175757" target="_blank" class="support-btn">
+                <i class="fab fa-whatsapp"></i> Contact Support
+            </a>
+
+            <!-- Copyright -->
+            <div class="copyright">
+                © 2024 M-Square Barber Shop. All rights reserved.
             </div>
         </div>
     </div>
@@ -1122,11 +1172,19 @@
         <!-- Header -->
         <div class="header">
             <div class="logo" onclick="showDashboard()">
-                <i class="fas fa-cut"></i>
+                <div class="logo-img">
+                    <!-- Replace src with your actual logo image -->
+                    <img src="https://zafirahdigital.github.io/M-Square-Barber-POS/Logo%20(3).png">
+                    <!-- Fallback icon if image fails to load -->
+                    <i class="fas fa-cut" style="display: none;"></i>
+                </div>
                 <span>M-SQUARE BARBER SHOP · PRO POS</span>
             </div>
             <div class="header-right">
                 <div class="datetime" id="liveDateTime"></div>
+                <a href="https://wa.me/923216175757" target="_blank" class="header-support">
+                    <i class="fab fa-whatsapp"></i> Support
+                </a>
                 <div class="user-badge" id="userBadge" onclick="showUserMenu()">
                     <i class="fas fa-user-circle"></i>
                     <span id="currentUser">Loading...</span>
@@ -2284,23 +2342,6 @@
                 });
         }
 
-        // Login with Google
-        function loginWithGoogle() {
-            const provider = new firebase.auth.GoogleAuthProvider();
-            const errorDiv = document.getElementById('loginError');
-
-            errorDiv.style.display = 'none';
-
-            auth.signInWithPopup(provider)
-                .then((result) => {
-                    analytics.logEvent('login', { method: 'google' });
-                })
-                .catch((error) => {
-                    errorDiv.style.display = 'block';
-                    errorDiv.textContent = error.message;
-                });
-        }
-
         // Logout
         function logout() {
             auth.signOut().then(() => {
@@ -2308,37 +2349,6 @@
             }).catch((error) => {
                 console.error('Logout error:', error);
             });
-        }
-
-        // Show forgot password
-        function showForgotPassword() {
-            const email = prompt('Enter your email address:');
-            if (email) {
-                auth.sendPasswordResetEmail(email)
-                    .then(() => {
-                        alert('Password reset email sent! Check your inbox.');
-                    })
-                    .catch((error) => {
-                        alert('Error: ' + error.message);
-                    });
-            }
-        }
-
-        // Show sign up
-        function showSignUp() {
-            const email = prompt('Enter your email address:');
-            const password = prompt('Enter your password (min 6 characters):');
-            
-            if (email && password) {
-                auth.createUserWithEmailAndPassword(email, password)
-                    .then((userCredential) => {
-                        alert('Account created successfully!');
-                        analytics.logEvent('sign_up', { method: 'email' });
-                    })
-                    .catch((error) => {
-                        alert('Error: ' + error.message);
-                    });
-            }
         }
 
         // Live DateTime
